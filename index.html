@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>Anu Singh - Health Coach & Nutrition Club Operator</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Styles for the language toggle in the navigation */
+        .lang-switcher-nav {
+            display: flex;
+            gap: 8px;
+            margin-left: auto;
+            margin-right: 15px;
+        }
+        .lang-btn {
+            background: #e9ecef;
+            border: none;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            color: var(--charcoal);
+        }
+        .lang-btn.active {
+            background: var(--primary-green);
+            color: var(--white);
+        }
+        @media (max-width: 900px) {
+            .lang-switcher-nav {
+                margin-right: 20px;
+            }
+        }
+        @media (max-width: 480px) {
+            .lang-btn {
+                padding: 4px 10px;
+                font-size: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVIGATION HEADER -->
+    <header>
+        <div class="nav-container">
+            <div class="logo-area">
+                <img src="images/logo.png" alt="Anu Singh Logo" class="logo-img">
+                <div class="logo-text">
+                    <h1>Anu Singh</h1>
+                    <span id="nav-subtitle">Herbalife Independent Distributor</span>
+                </div>
+            </div>
+            
+            <!-- Language Selection Toggle Buttons -->
+            <div class="lang-switcher-nav">
+                <button type="button" class="lang-btn active" id="idx-btn-en" onclick="setIndexLanguage('en')">English</button>
+                <button type="button" class="lang-btn" id="idx-btn-hi" onclick="setIndexLanguage('hi')">हिंदी</button>
+            </div>
+
+            <!-- Mobile Menu Toggle Button -->
+            <button class="mobile-menu-toggle" aria-label="Toggle Navigation">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+
+            <nav class="nav-links">
+                <a href="#about" class="nav-link-item" id="nav-about">About Me</a>
+                <a href="#results" class="nav-link-item" id="nav-results">Results</a>
+                <a href="#skincare" class="nav-link-item" id="nav-skin">Skincare</a> 
+                <a href="#reach-me" class="nav-link-item" id="nav-reach">Reach Me</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- PAGE 1: ABOUT ME SECTION -->
+    <section id="about">
+        <h2 class="section-title" id="sec-about-title">About Me</h2>
+        
+        <div class="intro-box fade-in-up">
+            <p id="about-p1">My name is <strong>Anu Singh</strong>. As a passionate health coach and a dedicated member of the Herbalife wellness team, my ultimate mission is to help you unlock your vibrant energy and embrace a healthier lifestyle.</p>
+            <p id="about-p2">I am also a proud nutrition club operator, which means I run a local physical community space focused on bringing people together through premium nutrition, delicious shakes, and everyday wellness support.</p>
+            <p id="about-p3"><strong>This incredible health journey is a family affair—my husband, Sanjeev Kr. Singh, is my partner in this mission, and he does this right alongside me!</strong> Together, we operate our club and dedicatedly coach people to achieve their absolute best versions of themselves.</p>
+        </div>
+
+        <h3 class="subsection-title" id="sec-about-sub">Our Personal Transformations</h3>
+        
+        <div class="two-column-grid">
+            <div class="profile-card interactive-hover">
+                <h3>Anu Singh</h3>
+                <p class="role-subtitle" id="anu-role">Club Operator</p>
+                <div class="img-container">
+                    <img src="images/anu.jpg" alt="Anu Singh Transformation" class="profile-img">
+                </div>
+                <p><em id="anu-quote">"By fixing my daily nutrition and lifestyle habits, I completely transformed my energy and health."</em></p>
+            </div>
+
+            <div class="profile-card interactive-hover">
+                <h3>Sanjeev Kr. Singh</h3>
+                <p class="role-subtitle" id="sanj-role">Co Club Partner</p>
+                <div class="img-container">
+                    <img src="images/sanjeev.jpg" alt="Sanjeev Kr. Singh Transformation" class="profile-img">
+                </div>
+                <p><em id="sanj-quote">"Fueling my body with intentional nutrition allowed me to smash my strength and wellness goals."</em></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- PAGE 2: RESULTS SECTION -->
+    <section id="results" class="white-section">
+        <div class="section-inner">
+            <h2 class="section-title" id="sec-res-title">Transformations</h2>
+            
+            <div class="results-banner">
+                <h2 id="res-banner-h2">✨ These are just like public, so results can be far better than this! ✨</h2>
+                <p id="res-banner-p">Every body is entirely unique, and your customized plan can yield results that are even more incredible!</p>
+            </div>
+
+            <!-- 6 Slots Gallery -->
+            <div class="results-grid">
+                <div class="result-card interactive-hover">
+                    <h4 class="green-text">Anu Singh</h4>
+                    <p class="tag-subtitle" id="anu-res-role">Club Operator</p>
+                    <div class="img-container">
+                        <img src="images/anu.jpg" alt="Anu Singh" class="result-img">
+                    </div>
+                    <p class="result-desc" id="anu-res-desc">Full health baseline to high-vitality lifestyle shift.</p>
+                </div>
+
+                <div class="result-card interactive-hover">
+                    <h4 class="green-text">Sanjeev Kr. Singh</h4>
+                    <p class="tag-subtitle" id="sanj-res-role">Co Club Partner</p>
+                    <div class="img-container">
+                        <img src="images/sanjeev.jpg" alt="Sanjeev Kr. Singh" class="result-img">
+                    </div>
+                    <p class="result-desc" id="sanj-res-desc">Fitness, core energy, and body composition change.</p>
+                </div>
+
+                <div class="result-card interactive-hover">
+                    <h4 id="c1-title">Client Transformation 1</h4>
+                    <p class="tag-subtitle standard" id="c1-tag">Verified Regular</p>
+                    <div class="img-container">
+                        <img src="images/client1.jpg" alt="Client 1" class="result-img">
+                    </div>
+                    <p class="result-desc" id="c1-desc">Energy levels, vitality, and daily habit improvements.</p>
+                </div>
+
+                <div class="result-card interactive-hover">
+                    <h4 id="c2-title">Client Transformation 2</h4>
+                    <p class="tag-subtitle standard" id="c2-tag">Verified Regular</p>
+                    <div class="img-container">
+                        <img src="images/client2.jpg" alt="Client 2" class="result-img">
+                    </div>
+                    <p class="result-desc" id="c2-desc">Weight management success and structural consistency.</p>
+                </div>
+
+                <div class="result-card interactive-hover">
+                    <h4 id="c3-title">Client Transformation 3</h4>
+                    <p class="tag-subtitle standard" id="c3-tag">Verified Regular</p>
+                    <div class="img-container">
+                        <img src="images/client3.jpg" alt="Client 3" class="result-img">
+                    </div>
+                    <p class="result-desc" id="c3-desc">Muscle tone advancement and fitness progression.</p>
+                </div>
+
+                <div class="result-card interactive-hover">
+                    <h4 id="c4-title">Client Transformation 4</h4>
+                    <p class="tag-subtitle standard" id="c4-tag">Verified Regular</p>
+                    <div class="img-container">
+                        <img src="images/client4.jpg" alt="Client 4" class="result-img">
+                    </div>
+                    <p class="result-desc" id="c4-desc">Community challenge milestone and consistency win.</p>
+                </div>
+            </div>
+
+            <!-- The "Just A Few Results" Closing Box -->
+            <div class="results-footer-cta interactive-hover">
+                <h3 id="cta-h3">These are just a few of our success stories!</h3>
+                <p id="cta-p">We have helped countless people in our local community completely change their lifestyles. Your body and goals are entirely unique, and we are ready to help you write your very own success story.</p>
+                <a href="contact.html" class="btn" id="cta-btn">Start Your Journey Today</a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- PAGE: VRITILIFE SKINCARE -->
+    <section id="skincare" class="white-section">
+        <div class="section-inner">
+            <h2 class="section-title" id="skin-title">Vritilife Skincare</h2>
+            <p style="text-align: center; margin-bottom: 30px; color: var(--gray);" id="skin-p">Discover the premium range of Vritilife by Herbalife. Nourish your skin with the science of nature.</p>
+            
+            <div class="results-grid">
+                <div class="result-card interactive-hover">
+                    <div class="img-container">
+                        <img src="images/cleanser.jpg" alt="Vritilife Cleanser" class="result-img">
+                    </div>
+                    <h3 id="clean-title">Cleanser</h3>
+                    <p class="result-desc" id="clean-desc">Gently remove impurities for a fresh, radiant base.</p>
+                    <a href="contact.html?goal=Skincare" class="btn" id="clean-btn" style="margin-top: 10px; font-size: 13px; padding: 10px 15px;">Click here to enrol in skin care</a>
+                </div>
+                <div class="result-card interactive-hover">
+                    <div class="img-container">
+                        <img src="images/toner.jpg" alt="Vritilife Toner" class="result-img">
+                    </div>
+                    <h3 id="toner-title">Toner</h3>
+                    <p class="result-desc" id="toner-desc">Balance and prepare your skin for ultimate hydration.</p>
+                    <a href="contact.html?goal=Skincare" class="btn" id="toner-btn" style="margin-top: 10px; font-size: 13px; padding: 10px 15px;">Click here to enrol in skin care</a>
+                </div>
+                <div class="result-card interactive-hover">
+                    <div class="img-container">
+                        <img src="images/serum.jpg" alt="Vritilife Serum" class="result-img">
+                    </div>
+                    <h3 id="serum-title">Serum</h3>
+                    <p class="result-desc" id="serum-desc">Targeted nourishment for a youthful, healthy glow.</p>
+                    <a href="contact.html?goal=Skincare" class="btn" id="serum-btn" style="margin-top: 10px; font-size: 13px; padding: 10px 15px;">Click here to enrol in skin care</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PAGE 3: REACH ME SECTION -->
+    <section id="reach-me">
+        <h2 class="section-title" id="sec-reach-title">Reach Me</h2>
+        
+        <div class="contact-grid">
+            <div class="contact-box interactive-hover">
+                <h3 id="r-box1-h3">Let's Start Your Plan</h3>
+                <p id="r-box1-p">Ready to drop by our club for a refreshing loaded tea, a nutrient-dense shake, or a completely free personalized wellness evaluation?</p>
+                <div class="phone-highlight">
+                    <strong id="r-box1-num">📞 Contact Number:</strong>
+                    <a href="tel:7678133567">7678133567</a>
+                </div>
+                <a href="contact.html" class="btn pulse-animation" id="r-box1-btn">Book Free Consultation</a>
+            </div>
+
+            <!-- UPDATED PROFESSIONAL ADDRESS -->
+            <div class="contact-box border-top-green interactive-hover">
+                <div class="icon-title" id="r-box2-title">📍 Physical Address</div>
+                <p class="address-text" id="r-box2-add">
+                    Flat 119, Ground Floor<br>
+                    Pocket 4, Sector 21
+                </p>
+            </div>
+
+            <!-- UPDATED 7 DAYS A WEEK HOURS -->
+            <div class="contact-box border-top-green interactive-hover">
+                <div class="icon-title" id="r-box3-title">⏰ Club Operating Hours</div>
+                <p class="hours-text" id="r-box3-hrs"><strong>Monday - Sunday:</strong><br>7:00 AM - 8:00 PM</p>
+                <p class="hint-text"><em id="r-box3-hint">Feel free to drop in straight off the street during these hours!</em></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- COMPLIANCE FOOTER -->
+    <footer>
+        <div class="footer-content">
+            <p id="footer-comp"><strong>Herbalife Independent Distributor Compliance Notice:</strong> These outcomes are applicable to the individuals depicted and are not a guarantee of your specific results. Weight management, energy, and fitness results vary depending on individual metabolism, dietary habits, physical activity, and dedication to the coaching program.</p>
+            <p class="copyright">&copy; 2026 Anu Singh Wellness. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    
+    <!-- LANGUAGE SWITCHER SCRIPT -->
+    <script>
+        const indexTranslations = {
+            en: {
+                navSub: "Herbalife Independent Distributor",
+                nav1: "About Me", nav2: "Results", nav3: "Skincare", nav4: "Reach Me",
+                secAboutTitle: "About Me",
+                aboutP1: "My name is <strong>Anu Singh</strong>. As a passionate health coach and a dedicated member of the Herbalife wellness team, my ultimate mission is to help you unlock your vibrant energy and embrace a healthier lifestyle.",
+                aboutP2: "I am also a proud nutrition club operator, which means I run a local physical community space focused on bringing people together through premium nutrition, delicious shakes, and everyday wellness support.",
+                aboutP3: "<strong>This incredible health journey is a family affair—my husband, Sanjeev Kr. Singh, is my partner in this mission, and he does this right alongside me!</strong> Together, we operate our club and dedicatedly coach people to achieve their absolute best versions of themselves.",
+                secAboutSub: "Our Personal Transformations",
+                roleOp: "Club Operator", roleCo: "Co Club Partner",
+                anuQuote: '"By fixing my daily nutrition and lifestyle habits, I completely transformed my energy and health."',
+                sanjQuote: '"Fueling my body with intentional nutrition allowed me to smash my strength and wellness goals."',
+                secResTitle: "Transformations",
+                resBannerH2: "✨ These are just like public, so results can be far better than this! ✨",
+                resBannerP: "Every body is entirely unique, and your customized plan can yield results that are even more incredible!",
+                anuResDesc: "Full health baseline to high-vitality lifestyle shift.",
+                sanjResDesc: "Fitness, core energy, and body composition change.",
+                cTitle: "Client Transformation", cTag: "Verified Regular",
+                c1Desc: "Energy levels, vitality, and daily habit improvements.",
+                c2Desc: "Weight management success and structural consistency.",
+                c3Desc: "Muscle tone advancement and fitness progression.",
+                c4Desc: "Community challenge milestone and consistency win.",
+                ctaH3: "These are just a few of our success stories!",
+                ctaP: "We have helped countless people in our local community completely change their lifestyles. Your body and goals are entirely unique, and we are ready to help you write your very own success story.",
+                ctaBtn: "Start Your Journey Today",
+                skinTitle: "Vritilife Skincare",
+                skinP: "Discover the premium range of Vritilife by Herbalife. Nourish your skin with the science of nature.",
+                clTitle: "Cleanser", clDesc: "Gently remove impurities for a fresh, radiant base.",
+                tnTitle: "Toner", tnDesc: "Balance and prepare your skin for ultimate hydration.",
+                srTitle: "Serum", srDesc: "Targeted nourishment for a youthful, healthy glow.",
+                skinBtn: "Click here to enrol in skin care",
+                secReachTitle: "Reach Me",
+                rBox1H3: "Let's Start Your Plan",
+                rBox1P: "Ready to drop by our club for a refreshing loaded tea, a nutrient-dense shake, or a completely free personalized wellness evaluation?",
+                rBox1Num: "📞 Contact Number:",
+                rBox1Btn: "Book Free Consultation",
+                rBox2Title: "📍 Physical Address",
+                rBox2Add: "Flat 119, Ground Floor<br>Pocket 4, Sector 21",
+                rBox3Title: "⏰ Club Operating Hours",
+                rBox3Hrs: "<strong>Monday - Sunday:</strong><br>7:00 AM - 8:00 PM",
+                rBox3Hint: "Feel free to drop in straight off the street during these hours!",
+                footerComp: "<strong>Herbalife Independent Distributor Compliance Notice:</strong> These outcomes are applicable to the individuals depicted and are not a guarantee of your specific results. Weight management, energy, and fitness results vary depending on individual metabolism, dietary habits, physical activity, and dedication to the coaching program."
+            },
+            hi: {
+                navSub: "हर्बालाइफ इंडिपेंडेंट डिस्ट्रीब्यूटर",
+                nav1: "मेरे बारे में", nav2: "परिणाम", nav3: "स्किनकेयर", nav4: "संपर्क करें",
+                secAboutTitle: "मेरे बारे में",
+                aboutP1: "मेरा नाम <strong>अनु सिंह</strong> है। हर्बालाइफ वेलनेस टीम के एक समर्पित सदस्य और हेल्थ कोच के रूप में, मेरा मिशन आपको एक स्वस्थ और ऊर्जावान जीवनशैली अपनाने में मदद करना है।",
+                aboutP2: "मैं एक न्यूट्रिशन क्लब ऑपरेटर भी हूँ, जिसका अर्थ है कि मैं एक ऐसा कम्युनिटी स्पेस चलाती हूँ जहाँ लोग बेहतरीन न्यूट्रिशन, स्वादिष्ट शेक और रोज़मर्रा के वेलनेस सपोर्ट के लिए एक साथ आते हैं।",
+                aboutP3: "<strong>यह शानदार स्वास्थ्य यात्रा एक पारिवारिक मिशन है—मेरे पति, संजीव कुमार सिंह, इस मिशन में मेरे पार्टनर हैं!</strong> हम दोनों मिलकर अपने क्लब का संचालन करते हैं और लोगों को उनका सर्वश्रेष्ठ संस्करण बनने में मदद करते हैं।",
+                secAboutSub: "हमारे व्यक्तिगत बदलाव (Transformations)",
+                roleOp: "क्लब ऑपरेटर", roleCo: "सह क्लब पार्टनर",
+                anuQuote: '"अपने दैनिक पोषण और जीवनशैली की आदतों को ठीक करके, मैंने अपनी ऊर्जा और स्वास्थ्य को पूरी तरह से बदल दिया है।"',
+                sanjQuote: '"सही पोषण के साथ अपने शरीर को ऊर्जा देने से मुझे अपनी फिटनेस और स्वास्थ्य के लक्ष्यों को प्राप्त करने में मदद मिली।"',
+                secResTitle: "बदलाव (Transformations)",
+                resBannerH2: "✨ यह सिर्फ कुछ परिणाम हैं, आपके परिणाम इससे भी बेहतर हो सकते हैं! ✨",
+                resBannerP: "हर शरीर पूरी तरह से अलग है, और आपका कस्टमाइज़्ड प्लान आपको और भी अविश्वसनीय परिणाम दे सकता है!",
+                anuResDesc: "बेहतर स्वास्थ्य और उच्च ऊर्जा वाली जीवनशैली में पूर्ण बदलाव।",
+                sanjResDesc: "फिटनेस, ऊर्जा और शारीरिक संरचना में सकारात्मक बदलाव।",
+                cTitle: "क्लाइंट ट्रांसफॉर्मेशन", cTag: "सत्यापित नियमित",
+                c1Desc: "ऊर्जा के स्तर और दैनिक आदतों में सुधार।",
+                c2Desc: "वजन प्रबंधन में सफलता और निरंतरता।",
+                c3Desc: "मांसपेशियों के विकास और फिटनेस में प्रगति।",
+                c4Desc: "कम्युनिटी चैलेंज जीतना और निरंतरता बनाए रखना।",
+                ctaH3: "ये हमारी सफलता की कुछ ही कहानियाँ हैं!",
+                ctaP: "हमने अपने समुदाय में अनगिनत लोगों की जीवनशैली बदलने में मदद की है। आपका शरीर और लक्ष्य पूरी तरह से अद्वितीय हैं, और हम आपकी अपनी सफलता की कहानी लिखने में मदद करने के लिए तैयार हैं।",
+                ctaBtn: "आज ही अपनी यात्रा शुरू करें",
+                skinTitle: "Vritilife स्किनकेयर",
+                skinP: "हर्बालाइफ की प्रीमियम 'Vritilife'レンジ खोजें। प्रकृति के विज्ञान के साथ अपनी त्वचा को पोषण दें।",
+                clTitle: "क्लींजर (Cleanser)", clDesc: "एक ताज़ा और चमकदार बेस के लिए अशुद्धियों को धीरे से हटाता है।",
+                tnTitle: "टोनर (Toner)", tnDesc: "बेहतरीन हाइड्रेशन के लिए आपकी त्वचा को संतुलित और तैयार करता है।",
+                srTitle: "सीरम (Serum)", srDesc: "युवा और स्वस्थ चमक के लिए लक्षित पोषण प्रदान करता है।",
+                skinBtn: "स्किनकेयर में एनरोल करने के लिए यहाँ क्लिक करें",
+                secReachTitle: "संपर्क करें",
+                rBox1H3: "अपना प्लान शुरू करें",
+                rBox1P: "क्या आप रिफ्रेशिंग लोडेड टी, पौष्टिक शेक, या पूरी तरह से मुफ्त व्यक्तिगत वेलनेस मूल्यांकन (Wellness Evaluation) के लिए हमारे क्लब आने के लिए तैयार हैं?",
+                rBox1Num: "📞 संपर्क नंबर:",
+                rBox1Btn: "फ्री कंसल्टेशन बुक करें",
+                rBox2Title: "📍 हमारा पता",
+                rBox2Add: "फ्लैट 119, ग्राउंड फ्लोर<br>पॉकेट 4, सेक्टर 21",
+                rBox3Title: "⏰ क्लब खुलने का समय",
+                rBox3Hrs: "<strong>सोमवार - रविवार:</strong><br>सुबह 7:00 - रात 8:00 बजे",
+                rBox3Hint: "इन घंटों के दौरान बेझिझक हमारे क्लब में आएं!",
+                footerComp: "<strong>हर्बालाइफ इंडिपेंडेंट डिस्ट्रीब्यूटर अनुपालन सूचना:</strong> ये परिणाम केवल दर्शाए गए व्यक्तियों पर लागू होते हैं और आपके विशिष्ट परिणामों की कोई गारंटी नहीं हैं। वजन प्रबंधन, ऊर्जा और फिटनेस परिणाम व्यक्तिगत चयापचय (Metabolism), आहार की आदतों और शारीरिक गतिविधि पर निर्भर करते हैं।"
+            }
+        };
+
+        function setIndexLanguage(lang) {
+            // Toggle active styling on buttons
+            document.getElementById('idx-btn-en').classList.toggle('active', lang === 'en');
+            document.getElementById('idx-btn-hi').classList.toggle('active', lang === 'hi');
+
+            const t = indexTranslations[lang];
+
+            // Header Nav
+            document.getElementById('nav-subtitle').innerText = t.navSub;
+            document.getElementById('nav-about').innerText = t.nav1;
+            document.getElementById('nav-results').innerText = t.nav2;
+            document.getElementById('nav-skin').innerText = t.nav3;
+            document.getElementById('nav-reach').innerText = t.nav4;
+
+            // About Section
+            document.getElementById('sec-about-title').innerText = t.secAboutTitle;
+            document.getElementById('about-p1').innerHTML = t.aboutP1;
+            document.getElementById('about-p2').innerHTML = t.aboutP2;
+            document.getElementById('about-p3').innerHTML = t.aboutP3;
+            document.getElementById('sec-about-sub').innerText = t.secAboutSub;
+            
+            document.getElementById('anu-role').innerText = t.roleOp;
+            document.getElementById('sanj-role').innerText = t.roleCo;
+            document.getElementById('anu-quote').innerText = t.anuQuote;
+            document.getElementById('sanj-quote').innerText = t.sanjQuote;
+
+            // Results Section
+            document.getElementById('sec-res-title').innerText = t.secResTitle;
+            document.getElementById('res-banner-h2').innerText = t.resBannerH2;
+            document.getElementById('res-banner-p').innerText = t.resBannerP;
+            
+            document.getElementById('anu-res-role').innerText = t.roleOp;
+            document.getElementById('anu-res-desc').innerText = t.anuResDesc;
+            document.getElementById('sanj-res-role').innerText = t.roleCo;
+            document.getElementById('sanj-res-desc').innerText = t.sanjResDesc;
+
+            for(let i=1; i<=4; i++) {
+                document.getElementById('c'+i+'-title').innerText = t.cTitle + ' ' + i;
+                document.getElementById('c'+i+'-tag').innerText = t.cTag;
+            }
+            document.getElementById('c1-desc').innerText = t.c1Desc;
+            document.getElementById('c2-desc').innerText = t.c2Desc;
+            document.getElementById('c3-desc').innerText = t.c3Desc;
+            document.getElementById('c4-desc').innerText = t.c4Desc;
+
+            document.getElementById('cta-h3').innerText = t.ctaH3;
+            document.getElementById('cta-p').innerText = t.ctaP;
+            document.getElementById('cta-btn').innerText = t.ctaBtn;
+
+            // Skincare Section
+            document.getElementById('skin-title').innerText = t.skinTitle;
+            document.getElementById('skin-p').innerText = t.skinP;
+            document.getElementById('clean-title').innerText = t.clTitle;
+            document.getElementById('clean-desc').innerText = t.clDesc;
+            document.getElementById('clean-btn').innerText = t.skinBtn;
+            document.getElementById('toner-title').innerText = t.tnTitle;
+            document.getElementById('toner-desc').innerText = t.tnDesc;
+            document.getElementById('toner-btn').innerText = t.skinBtn;
+            document.getElementById('serum-title').innerText = t.srTitle;
+            document.getElementById('serum-desc').innerText = t.srDesc;
+            document.getElementById('serum-btn').innerText = t.skinBtn;
+
+            // Reach Me Section
+            document.getElementById('sec-reach-title').innerText = t.secReachTitle;
+            document.getElementById('r-box1-h3').innerText = t.rBox1H3;
+            document.getElementById('r-box1-p').innerText = t.rBox1P;
+            document.getElementById('r-box1-num').innerText = t.rBox1Num;
+            document.getElementById('r-box1-btn').innerText = t.rBox1Btn;
+            
+            document.getElementById('r-box2-title').innerText = t.rBox2Title;
+            document.getElementById('r-box2-add').innerHTML = t.rBox2Add;
+            
+            document.getElementById('r-box3-title').innerText = t.rBox3Title;
+            document.getElementById('r-box3-hrs').innerHTML = t.rBox3Hrs;
+            document.getElementById('r-box3-hint').innerText = t.rBox3Hint;
+
+            // Footer
+            document.getElementById('footer-comp').innerHTML = t.footerComp;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>Book a Consultation - Anu Singh</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .contact-page-container {
+            max-width: 700px;
+            margin: 20px auto;
+            background: var(--white);
+            padding: 40px 30px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            border-top: 5px solid var(--primary-green);
+            transform: translateY(0);
+            animation: formAppear 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        @keyframes formAppear {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .lang-switcher {
+            display: flex;
+            justify-content: flex-end;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        .lang-btn {
+            background: #e9ecef;
+            border: none;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            color: var(--charcoal);
+        }
+        .lang-btn.active {
+            background: var(--primary-green);
+            color: var(--white);
+        }
+        .form-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--charcoal);
+        }
+        .form-group input, .form-group select, .form-group textarea {
+            width: 100%;
+            padding: 14px;
+            border: 1px solid #ced4da;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            -webkit-appearance: none;
+        }
+        .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary-green);
+            box-shadow: 0 0 0 3px rgba(123, 193, 67, 0.2);
+        }
+        .back-link {
+            display: inline-block;
+            margin-top: 25px;
+            color: var(--gray);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.2s ease;
+        }
+        .back-link:hover {
+            color: var(--primary-green);
+        }
+        @media (max-width: 480px) {
+            .contact-page-container {
+                padding: 25px 20px;
+                margin: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="nav-container">
+            <div class="logo-area">
+                <img src="images/logo.png" alt="Anu Singh Logo" class="logo-img" onerror="this.style.display='none'">
+                <div class="logo-text">
+                    <h1>Anu Singh</h1>
+                    <span>Herbalife Independent Distributor</span>
+                </div>
+            </div>
+            <nav class="nav-links">
+                <a href="index.html#about" class="nav-link-item">About Me</a>
+                <a href="index.html#results" class="nav-link-item">Results</a>
+                <a href="index.html#reach-me" class="nav-link-item">Reach Me</a>
+            </nav>
+        </div>
+    </header>
+
+    <section style="padding: 20px 10px;">
+        <div class="contact-page-container">
+            
+            <div class="lang-switcher">
+                <button type="button" class="lang-btn active" id="btn-en" onclick="setLanguage('en')">English</button>
+                <button type="button" class="lang-btn" id="btn-hi" onclick="setLanguage('hi')">हिंदी</button>
+            </div>
+
+            <h2 id="form-title" style="font-size: 28px; margin-bottom: 10px; color: var(--charcoal);">Book Your Free Consultation</h2>
+            <p id="form-desc" style="color: var(--gray); margin-bottom: 30px; font-size: 15px;">Fill out this quick form to instantly send us a booking request via WhatsApp!</p>
+            
+            <form id="whatsappForm">
+                <div class="form-group">
+                    <label id="lbl-name" for="name">Your Full Name</label>
+                    <input type="text" id="name" placeholder="Enter your name" required>
+                </div>
+
+                <div class="form-group">
+                    <label id="lbl-phone" for="phone">Your Phone Number</label>
+                    <input type="tel" id="phone" placeholder="Enter your phone number" required>
+                </div>
+
+                <div class="form-group" style="position: relative;">
+                    <label id="lbl-goal" for="goal">Your Primary Health Goal</label>
+                    <select id="goal" required style="background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A//w3.org/2000/svg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%236c757d%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22/%3E%3C/svg%3E'); background-repeat: no-repeat; background-position: right%2014px%20top%2050%25; background-size:%2012px%20auto;">
+                        <option value="" disabled selected id="opt-placeholder">Select a goal...</option>
+                        <option value="Weight Management" id="opt-g1">Weight Management</option>
+                        <option value="Clean Energy Boost" id="opt-g2">Clean Energy Boost</option>
+                        <option value="Fitness & Muscle Gain" id="opt-g3">Fitness & Muscle Gain</option>
+                        <option value="Healthy Habits / Club Visit" id="opt-g4">Healthy Habits / Nutrition Club Visit</option>
+                        <option value="Skincare" id="opt-g5">Skincare</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label id="lbl-msg" for="message">Message (Optional)</label>
+                    <textarea id="message" rows="4" placeholder="Tell us a little bit about what you're looking to achieve..."></textarea>
+                </div>
+
+                <button type="submit" id="submit-btn" class="btn pulse-animation" style="width: 100%; border: none; cursor: pointer; font-size: 16px; padding: 15px;">Send Request via WhatsApp</button>
+            </form>
+
+            <div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid var(--border-light);">
+                <p id="call-text" style="font-weight: bold; margin-bottom: 5px; color: var(--charcoal);">Prefer to just call us directly?</p>
+                <p style="font-size: 18px;">📲 Phone: <a href="tel:7678133567" style="color: var(--primary-green); font-weight: bold; text-decoration: none;">7678133567</a></p>
+            </div>
+
+            <a href="index.html" id="back-home-link" class="back-link">← Back to Homepage</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <p><strong>Herbalife Independent Distributor Compliance Notice:</strong> These outcomes are applicable to the individuals depicted and are not a guarantee of your specific results. Weight management, energy, and fitness results vary depending on individual metabolism, dietary habits, physical activity, and dedication to the coaching program.</p>
+            <p class="copyright">&copy; 2026 Anu Singh Wellness. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Language Text Assets Dictionary
+        const translations = {
+            en: {
+                title: "Book Your Free Consultation",
+                desc: "Fill out this quick form to instantly send us a booking request via WhatsApp!",
+                name: "Your Full Name",
+                namePl: "Enter your name",
+                phone: "Your Phone Number",
+                phonePl: "Enter your phone number",
+                goal: "Your Primary Health Goal",
+                goalPl: "Select a goal...",
+                g1: "Weight Management",
+                g2: "Clean Energy Boost",
+                g3: "Fitness & Muscle Gain",
+                g4: "Healthy Habits / Nutrition Club Visit",
+                g5: "Skincare",
+                msg: "Message (Optional)",
+                msgPl: "Tell us a little bit about what you're looking to achieve...",
+                btn: "Send Request via WhatsApp",
+                processing: "कृपया प्रतीक्षा करें (Processing...)...",
+                call: "Prefer to just call us directly?",
+                back: "← Back to Homepage"
+            },
+            hi: {
+                title: "फ्री कंसल्टेशन बुक करें",
+                desc: "व्हाट्सएप के माध्यम से बुकिंग अनुरोध भेजने के लिए इस फॉर्म को तुरंत भरें!",
+                name: "आपका पूरा नाम",
+                namePl: "अपना नाम यहाँ लिखें",
+                phone: "आपका फ़ोन नंबर",
+                phonePl: "अपना फ़ोन नंबर लिखें",
+                goal: "आपका मुख्य स्वास्थ्य लक्ष्य",
+                goalPl: "एक लक्ष्य चुनें...",
+                g1: "वजन कम करना / वजन बढ़ाना (Weight Management)",
+                g2: "थकावट दूर करना (Clean Energy Boost)",
+                g3: "फिटनेस और मसल्स गेन (Fitness & Muscle Gain)",
+                g4: "स्वस्थ आदतें / न्यूट्रिशन क्लब विज़िट (Club Visit)",
+                g5: "स्किनकेयर (Skincare)",
+                msg: "संदेश (वैकल्पिक)",
+                msgPl: "आप जो हासिल करना चाहते हैं उसके बारे में हमें थोड़ा बताएं...",
+                btn: "व्हाट्सएप पर संदेश भेजें",
+                processing: "कृपया प्रतीक्षा करें...",
+                call: "सीधे कॉल करना पसंद करते हैं?",
+                back: "← होमपेज पर वापस जाएं"
+            }
+        };
+
+        let currentLang = 'en';
+
+        function setLanguage(lang) {
+            currentLang = lang;
+            
+            // Toggle active classes on buttons
+            document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+            document.getElementById('btn-hi').classList.toggle('active', lang === 'hi');
+
+            // Swap out all text elements cleanly
+            document.getElementById('form-title').innerText = translations[lang].title;
+            document.getElementById('form-desc').innerText = translations[lang].desc;
+            document.getElementById('lbl-name').innerText = translations[lang].name;
+            document.getElementById('name').placeholder = translations[lang].namePl;
+            document.getElementById('lbl-phone').innerText = translations[lang].phone;
+            document.getElementById('phone').placeholder = translations[lang].phonePl;
+            document.getElementById('lbl-goal').innerText = translations[lang].goal;
+            document.getElementById('opt-placeholder').innerText = translations[lang].goalPl;
+            document.getElementById('opt-g1').innerText = translations[lang].g1;
+            document.getElementById('opt-g2').innerText = translations[lang].g2;
+            document.getElementById('opt-g3').innerText = translations[lang].g3;
+            document.getElementById('opt-g4').innerText = translations[lang].g4;
+            document.getElementById('opt-g5').innerText = translations[lang].g5;
+            document.getElementById('lbl-msg').innerText = translations[lang].msg;
+            document.getElementById('message').placeholder = translations[lang].msgPl;
+            document.getElementById('submit-btn').innerText = translations[lang].btn;
+            document.getElementById('call-text').innerText = translations[lang].call;
+            document.getElementById('back-home-link').innerText = translations[lang].back;
+        }
+
+        // Auto-select Goal from URL parameter
+        document.addEventListener("DOMContentLoaded", function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const incomingGoal = urlParams.get('goal');
+            if (incomingGoal) {
+                const goalSelect = document.getElementById('goal');
+                if (goalSelect.querySelector(`option[value="${incomingGoal}"]`)) {
+                    goalSelect.value = incomingGoal;
+                }
+            }
+        });
+
+        document.getElementById("whatsappForm").addEventListener("submit", async function(e) {
+            e.preventDefault();
+            
+            var submitBtn = document.getElementById("submit-btn");
+            submitBtn.innerText = translations[currentLang].processing;
+            submitBtn.disabled = true;
+
+            var name = document.getElementById("name").value;
+            var phone = document.getElementById("phone").value;
+            var goal = document.getElementById("goal").value;
+            var message = document.getElementById("message").value;
+            var waNumber = "917678133567";
+
+            // Standard dictionary mapping for the finalized message translation string
+            var goalMapping = {
+                "Weight Management": "वजन कम करना / वजन बढ़ाना (Weight Management)",
+                "Clean Energy Boost": "थकावट दूर करना (Clean Energy Boost)",
+                "Fitness & Muscle Gain": "फिटनेस और मसल्स गेन (Fitness & Muscle Gain)",
+                "Healthy Habits / Club Visit": "स्वस्थ आदतें / न्यूट्रिशन क्लब विज़िट (Healthy Habits / Club Visit)",
+                "Skincare": "स्किनकेयर (Skincare)"
+            };
+            
+            var hindiGoal = goalMapping[goal] || goal;
+
+            // Free Public Input Tool transliteration API call for user's text name spelling
+            var hindiName = name; 
+            try {
+                var response = await fetch("https://inputtools.google.com/request?text=" + encodeURIComponent(name) + "&itc=hi-t-i0-und&num=1");
+                var data = await response.json();
+                if (data && data[0] === "SUCCESS" && data[1][0][1][0]) {
+                    hindiName = data[1][0][1][0];
+                }
+            } catch (error) {
+                console.error("Transliteration connection issue, falling back safely:", error);
+            }
+
+            var waText = "नमस्ते कोच अनु! मैं एक फ्री वेलनेस कंसल्टेशन (Wellness Consultation) बुक करना चाहता हूँ।%0A%0A" +
+                         "*नाम:* " + encodeURIComponent(hindiName) + "%0A" +
+                         "*फोन नंबर:* " + encodeURIComponent(phone) + "%0A" +
+                         "*मुख्य लक्ष्य:* " + encodeURIComponent(hindiGoal);
+            
+            if (message.trim() !== "") {
+                waText += "%0A*संदेश:* " + encodeURIComponent(message);
+            }
+
+            submitBtn.innerText = translations[currentLang].btn;
+            submitBtn.disabled = false;
+
+            window.open("https://wa.me/" + waNumber + "?text=" + waText, "_blank");
+        });
+    </script>
+</body>
+</html>
